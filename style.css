@@ -79,7 +79,7 @@ nav ul li:last-child:hover.drop-down {
   top: -10px;
   width: 0px;
   height: 0px;
-  border-bottom: 10px solid #e8e8e8;
+  border-bottom: 10px solid #fff;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
@@ -88,7 +88,8 @@ nav ul li:last-child:hover.drop-down {
   display: none;
 }
 
-[data-dropdown]:hover .drop-down {
+[data-dropdown]:hover .drop-down,
+[data-dropdown].ativo .drop-down {
   display: block;
   animation: showup 0.3s forwards;
 }
@@ -96,25 +97,26 @@ nav ul li:last-child:hover.drop-down {
 @keyframes showup {
   from {
     opacity: 0;
-    transform: translate3d(0 30px 0 0);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translate3d(0 0 0);
+    transform: translateY(0);
   }
 }
 
 .drop-down {
-  background-color: #e8e8e8;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   padding: 5px;
   border-radius: 9px;
   position: absolute;
-  right: -75px;
-  top: 38px;
+  right: -70px;
+  top: 35px;
   width: 240px;
   z-index: 200;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
 }
 
 .drop-down li {
